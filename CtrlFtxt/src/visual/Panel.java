@@ -55,7 +55,7 @@ public class Panel extends JPanel{
 			prompt.setHorizontalAlignment(SwingConstants.CENTER);
 			prompt.setForeground(new Color(255, 255, 255));
 			prompt.setText("<html>Importe um Arquivo em Txt <br>e pesquise por palavras nele:</html>");
-			prompt.setFont(new Font("GrapeSoda", Font.PLAIN, 28));
+			prompt.setFont(new Font("Montserrat", Font.BOLD, 20));
 			prompt.setBounds(50, 20, 500, 73);
 		}
 		return prompt;
@@ -70,8 +70,8 @@ public class Panel extends JPanel{
 			importar.setOpaque(false);
 			importar.setBackground(new Color(82, 48, 48));
 			importar.setText("Importar Arquivo");
-			importar.setFont(new Font("GrapeSoda", Font.PLAIN, 25));
-			importar.setBounds(50, 110, 208, 50);
+			importar.setFont(new Font("Montserrat", Font.BOLD, 18));
+			importar.setBounds(50, 110, 189, 50);
 			importar.setToolTipText("Clique para importar um arquivo em .txt");
 			importar.setFocusable(false);
 		}
@@ -81,10 +81,9 @@ public class Panel extends JPanel{
 	public JLabel getNomeArquivo() {
 		if(nomeArquivo == null) {
 			nomeArquivo = new JLabel();
-			nomeArquivo.setHorizontalAlignment(SwingConstants.CENTER);
 			nomeArquivo.setForeground(new Color(239, 239, 239));
-			nomeArquivo.setFont(new Font("GrapeSoda", Font.PLAIN, 24));
-			nomeArquivo.setBounds(259, 110, 302, 50);
+			nomeArquivo.setFont(new Font("Montserrat", Font.BOLD, 19));
+			nomeArquivo.setBounds(257, 110, 316, 50);
 		}
 		return nomeArquivo;
 	}
@@ -92,7 +91,7 @@ public class Panel extends JPanel{
 	public JTextArea getTxt() {
 		if(txt == null) {
 			txt = new JTextArea();
-			txt.setFont(new Font("GrapeSoda", Font.PLAIN, 20));
+			txt.setFont(new Font("Montserrat", Font.PLAIN, 15));
 			txt.setLineWrap(true);
 		    txt.setWrapStyleWord(true);
 		    txt.setEditable(false);
@@ -122,7 +121,7 @@ public class Panel extends JPanel{
 			pesquisar.setFocusable(false);
 			pesquisar.setBackground(new Color(230, 230, 230));
 			pesquisar.setText("Procurar por Palavra");
-			pesquisar.setFont(new Font("GrapeSoda", Font.PLAIN, 25));
+			pesquisar.setFont(new Font("Montserrat", Font.BOLD, 20));
 			pesquisar.setBounds(293, 445, 257, 50);
 			pesquisar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		}
@@ -139,7 +138,7 @@ public class Panel extends JPanel{
 				    new LineBorder(new Color(65, 65, 65)),
 				    new EmptyBorder(0, 10, 0, 0)
 				));
-			palavra.setFont(new Font("GrapeSoda", Font.PLAIN, 21));
+			palavra.setFont(new Font("Montserrat", Font.BOLD, 20));
 			palavra.setBounds(50, 450, 221, 40);
 		}
 		return palavra;
@@ -148,8 +147,8 @@ public class Panel extends JPanel{
 	public JLabel getResposta() {
 		if(resposta == null) {
 			resposta = new JLabel();
-			resposta.setForeground(new Color(255, 255, 255));
-			resposta.setFont(new Font("GrapeSoda", Font.PLAIN, 28));
+			resposta.setForeground(new Color(194, 235, 197));
+			resposta.setFont(new Font("Montserrat", Font.BOLD, 22));
 			resposta.setText("<html>Palavra:<br>\r\nNúmero de Ocorrências:</html>");
 			resposta.setBounds(125, 529, 350, 65);
 		}

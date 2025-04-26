@@ -49,12 +49,12 @@ public class ControladorPanel implements ActionListener{
 	            // TESTA SE O ARQUIVO EXISTE
 	            if(!arquivo.exists()) {
 	            	panel.getNomeArquivo().setForeground(new Color(255, 94, 94));
-		            panel.getNomeArquivo().setText("Arquivo Inexistente!!");
+		            panel.getNomeArquivo().setText("Arquivo Inexistente!");
 		            
 		        // TESTA SE O ARQUIVO ESTÁ EM TXT
 	            } else if(!arquivo.getName().toLowerCase().endsWith(".txt")) {
 	            	panel.getNomeArquivo().setForeground(new Color(255, 94, 94));
-	    	        panel.getNomeArquivo().setText("Arquivo Selecionado não está em TXT!");
+	    	        panel.getNomeArquivo().setText("Arquivo não está em TXT!");
 	    	        
 	    	    // CASO O ARQUIVO EXISTA E ESTEJA EM TXT
 	            } else {
@@ -70,13 +70,13 @@ public class ControladorPanel implements ActionListener{
 	            	
 	            	arquivoImportado = true;
 	            	panel.getNomeArquivo().setForeground(new Color(139, 169, 214));
-	            	panel.getNomeArquivo().setText(arquivo.getName());
+	            	panel.getNomeArquivo().setText("Arquivo: " + arquivo.getName());
 	            } 
 	          
 	        // CASO O ARQUIVO NÃO FOR SELECIONADO
 	        } else {
 	        	panel.getNomeArquivo().setForeground(new Color(255, 94, 94));
-	        	panel.getNomeArquivo().setText("Nenhum Arquivo Selecionado!");
+	        	panel.getNomeArquivo().setText("Nenhum Arquivo Selecionado");
 	        }
 	            
 		}

@@ -48,25 +48,35 @@ public class ControladorPanel implements ActionListener{
 	            
 	            // TESTA SE O ARQUIVO EXISTE
 	            if(!arquivo.exists()) {
-	            	panel.getNomeArquivo().setForeground(Color.red);
+	            	panel.getNomeArquivo().setForeground(new Color(255, 94, 94));
 		            panel.getNomeArquivo().setText("Arquivo Inexistente!!");
 		            
 		        // TESTA SE O ARQUIVO ESTÁ EM TXT
 	            } else if(!arquivo.getName().toLowerCase().endsWith(".txt")) {
-	            	panel.getNomeArquivo().setForeground(Color.red);
+	            	panel.getNomeArquivo().setForeground(new Color(255, 94, 94));
 	    	        panel.getNomeArquivo().setText("Arquivo Selecionado não está em TXT!");
 	    	        
 	    	    // CASO O ARQUIVO EXISTA E ESTEJA EM TXT
 	            } else {
+	            	StringBuilder conteudo = new StringBuilder();
+	            	try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
+	            		String linha;
+	            		while ((linha = leitor.readLine()) != null)
+	            			conteudo.append(linha);
+	            	} catch (IOException e1) {
+	            		e1.printStackTrace();
+	            	}
+	            	panel.getTxt().setText(conteudo.toString());
+	            	
 	            	arquivoImportado = true;
-	            	panel.getNomeArquivo().setForeground(Color.blue);
+	            	panel.getNomeArquivo().setForeground(new Color(139, 169, 214));
 	            	panel.getNomeArquivo().setText(arquivo.getName());
-	            }
+	            } 
 	          
 	        // CASO O ARQUIVO NÃO FOR SELECIONADO
 	        } else {
-	        	panel.getNomeArquivo().setForeground(Color.red);
-	        	panel.getNomeArquivo().setText("Nenhum Arquivo Selecionado!!");
+	        	panel.getNomeArquivo().setForeground(new Color(255, 94, 94));
+	        	panel.getNomeArquivo().setText("Nenhum Arquivo Selecionado!");
 	        }
 	            
 		}
@@ -89,7 +99,7 @@ public class ControladorPanel implements ActionListener{
             					palavraCount ++;
             		}
             		
-            		panel.getResposta().setText("<html>Palavra: " + palavra + "<br><br>Número de Ocorrências: " + palavraCount + "</html>");
+            		panel.getResposta().setText("<html>Palavra: " + palavra + "<br>Número de Ocorrências: " + palavraCount + "</html>");
             	} catch (IOException e1) {
             		e1.printStackTrace();
             	}

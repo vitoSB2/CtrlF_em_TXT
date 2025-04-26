@@ -62,7 +62,7 @@ public class ControladorPanel implements ActionListener{
 	            	try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
 	            		String linha;
 	            		while ((linha = leitor.readLine()) != null)
-	            			conteudo.append(linha);
+	            			conteudo.append(linha + " ");
 	            	} catch (IOException e1) {
 	            		e1.printStackTrace();
 	            	}
